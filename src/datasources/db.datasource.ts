@@ -1,12 +1,12 @@
 import {inject, lifeCycleObserver, LifeCycleObserver} from '@loopback/core';
 import {juggler} from '@loopback/repository';
 
+// host: 'localhost' or 'psqldock' for Docker postgres://postgres:brocal@psqldock:5433/ydiyoi
 const config = {
   name: 'db',
   connector: 'postgresql',
-  url: '',
-  host: 'localhost',
-  port: 5432,
+  host: 'psqldock',
+  port: 5433,
   user: 'postgres',
   password: 'brocal',
   database: 'ydiyoi'

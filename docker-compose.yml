@@ -1,0 +1,29 @@
+version: "3.7"
+
+networks:
+  app-tier:
+    driver: bridge
+
+services:
+  psqldock:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: brocal
+      POSTGRES_USER: postgres
+      POSTGRES_DB: ydiyoi
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    networks:
+      - app-tier
+  api:
+    image: ydi-yoi
+    ports:
+      - "3000:3000"
+    networks:
+      - app-tier
+    depends_on:
+      - psqldock
+    links:
+      - psqldock
