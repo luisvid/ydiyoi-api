@@ -7,6 +7,7 @@ networks:
 services:
   psqldock:
     image: postgres
+    restart: always
     environment:
       POSTGRES_PASSWORD: brocal
       POSTGRES_USER: postgres
@@ -14,11 +15,12 @@ services:
     volumes:
       - ./pgdata:/var/lib/postgresql/data
     ports:
-      - "5433:5432"
+      - "5432:5432"
     networks:
       - app-tier
   api:
     image: ydi-yoi
+    restart: always
     ports:
       - "3000:3000"
     networks:

@@ -6,7 +6,7 @@ const config = {
   name: 'db',
   connector: 'postgresql',
   host: 'psqldock',
-  port: 5433,
+  port: 5432,
   user: 'postgres',
   password: 'brocal',
   database: 'ydiyoi'
